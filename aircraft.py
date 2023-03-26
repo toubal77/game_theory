@@ -1,3 +1,5 @@
+import random
+
 class Aircraft:
     def __init__(self, name, capacity, range, fuel_consumption, speed):
         self.name = name
@@ -14,3 +16,13 @@ class Aircraft:
 
     def produce(self, cost):
         self.production_cost += cost
+
+    def develop_aircraft(self, aircraft):
+        cost = random.randint(100000, 1000000)
+        aircraft.develop(cost)
+        success_rate = random.randint(1, 10)
+        if success_rate > 5:
+            aircraft.range += random.randint(1000, 5000)
+            aircraft.capacity += random.randint(10, 100)
+            aircraft.fuel_consumption -= random.randint(1, 5)
+            aircraft.speed += random.randint(300, 900)
