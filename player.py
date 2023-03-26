@@ -4,6 +4,7 @@ class Player:
         self.company = company
 
     def buy_aircraft(self, aircraft):
+        aircraft.develop(1000);
         print("player buying aircraft")
 
     def sell_aircraft(self, aircraft):

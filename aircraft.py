@@ -10,6 +10,7 @@ class Aircraft:
 
     def develop(self, cost):
         self.development_cost += cost
+        print(f"development cost of {self.name} is {self.development_cost}")
 
     def produce(self, cost):
         self.production_cost += cost

@@ -1,16 +1,13 @@
-# This is a sample Python script.
+import aircraft
+import player
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    boeing_airlines = aircraft.Aircraft("Boeing", 0, 0, 0, 0)
+    airbus_airlines = aircraft.Aircraft("Airbus", 0, 0, 0, 0)
+    player_airAlgerie = player.Player("Algerie", "Air algerie")
+    player_airFrance = player.Player("France", "Air france")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    player_airFrance.buy_aircraft(boeing_airlines)
+    player_airFrance.buy_aircraft(airbus_airlines)
+    player_airFrance.sell_aircraft(boeing_airlines)
+    player_airFrance.sell_aircraft(airbus_airlines)
