@@ -1,10 +1,11 @@
 class Aircraft:
-    def __init__(self, name, capacity, range, fuel_consumption, speed, production_cost):
+    def __init__(self, name, capacity, range, fuel_consumption, speed, production_cost, isAirbus):
         self.name = name
         self.capacity = capacity
         self.range = range
         self.fuel_consumption = fuel_consumption
         self.speed = speed
+        self.isAirbus = isAirbus;
         self.development_cost = 0
         self.production_cost = production_cost
 
