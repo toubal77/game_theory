@@ -12,12 +12,11 @@ class Aircraft:
 
     def develop(self, cost):
         self.development_cost += cost
-        print(f"development cost of {self.name} is {self.development_cost}")
 
     def produce(self, cost):
         self.production_cost += cost
 
-    def develop_aircraft(self, aircraft):
+    def develop_aircraft(aircraft):
         cost = random.randint(100000, 1000000)
         aircraft.develop(cost)
         success_rate = random.randint(1, 10)
@@ -25,4 +24,11 @@ class Aircraft:
             aircraft.range += random.randint(1000, 5000)
             aircraft.capacity += random.randint(10, 100)
             aircraft.fuel_consumption -= random.randint(1, 5)
-            aircraft.speed += random.randint(300, 900)
+            aircraft.speed += random.randint(50, 200)
+
+    def is_competitive(self, competitor):
+        if self.capacity > competitor.capacity and self.range > competitor.range and \
+           self.fuel_consumption < competitor.fuel_consumption and self.speed > competitor.speed:
+            return True
+        else:
+            return False
