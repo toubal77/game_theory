@@ -13,10 +13,22 @@ if __name__ == '__main__':
     toubal = player.Player("Toubal", "Boeing")
     oualladi = player.Player("Oualladi", "Airbus")
     # Demander aux joueurs d'acheter ou de vendre des avions
-    buyAircraft = random.choice([boeing1, boeing2, boeing3, airbus1, airbus2, airbus3])
-    toubal.buy_aircraft(buyAircraft)
-    buyAircraft2 = random.choice([boeing1, boeing2, boeing3, airbus1, airbus2, airbus3])
-    oualladi.buy_aircraft(buyAircraft2)
+        # choice if company toubal want to buy or not
+    if random.choice([1, 0]):
+        buyAircraft = random.choice([boeing1, boeing2, boeing3, airbus1, airbus2, airbus3])
+        toubal.buy_aircraft(buyAircraft)
+        # choice if company oualladi want to buy or not
+    if random.choice([1, 0]):
+        buyAircraft2 = random.choice([boeing1, boeing2, boeing3, airbus1, airbus2, airbus3])
+        oualladi.buy_aircraft(buyAircraft2)
+        # choice if company toubal want to sell or not
+    if random.choice([1, 0]):
+        buyAircraft = random.choice([boeing1, boeing2, boeing3, airbus1, airbus2, airbus3])
+        toubal.sell_aircraft(buyAircraft)
+        # choice if company oualladi want to sell or not
+    if random.choice([1, 0]):
+        buyAircraft2 = random.choice([boeing1, boeing2, boeing3, airbus1, airbus2, airbus3])
+        oualladi.sell_aircraft(buyAircraft2)
     # Simuler le processus de développement pour les avions en cours de développement
     boeing = aircraft.Aircraft("Boeing", 0, 0, 0, 0, 0)
     airbus = aircraft.Aircraft("Airbus", 0, 0, 0, 0, 0)

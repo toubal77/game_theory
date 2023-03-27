@@ -15,7 +15,7 @@ class Player:
             print(f"-The balance of company {self.company} is {self.cash}$")
             return True
         else:
-            print(f"The company {self.company} does not have the necessary funds")
+            print(f"-The company {self.company} does not have the necessary funds to buy aircraft")
             return False
 
     def sell_aircraft(self, aircraft):
@@ -26,7 +26,7 @@ class Player:
             print(f"-The balance of company {self.company} is {self.cash}$")
             return True
         else:
-            print(f"The company {self.company} does not have this plane")
+            print(f"-The company {self.company} does not have this plane to sell it")
             return False
 
     def develop_aircraft(self, aircraft):
