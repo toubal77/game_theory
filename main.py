@@ -1,13 +1,27 @@
 import aircraft
 import player
-
+import random
 if __name__ == '__main__':
-    boeing_airlines = aircraft.Aircraft("Boeing", 0, 0, 0, 0)
-    airbus_airlines = aircraft.Aircraft("Airbus", 0, 0, 0, 0)
-    player_airAlgerie = player.Player("Algerie", "Air algerie")
-    player_airFrance = player.Player("France", "Air france")
-
-    player_airFrance.buy_aircraft(boeing_airlines)
-    player_airFrance.buy_aircraft(airbus_airlines)
-    player_airFrance.sell_aircraft(boeing_airlines)
-    player_airFrance.sell_aircraft(airbus_airlines)
+    #it is planes already produced and developed ready to be sold
+    boeing1 = aircraft.Aircraft("737", 160, 5560, 3, 550, 425265)
+    airbus1 = aircraft.Aircraft("A330", 320, 7500, 3, 720, 592500)
+    boeing2 = aircraft.Aircraft("777", 380, 9000, 4, 800, 654800)
+    airbus2 = aircraft.Aircraft("A380", 400, 9000, 4, 850, 721502)
+    boeing3 = aircraft.Aircraft("764", 250, 6253, 2, 628, 356852)
+    airbus3 = aircraft.Aircraft("A310", 110, 5800, 2, 525, 285647)
+    #player statement
+    toubal = player.Player("Toubal", "Boeing")
+    oualladi = player.Player("Oualladi", "Airbus")
+    # Demander aux joueurs d'acheter ou de vendre des avions
+    buyAircraft = random.choice([boeing1, boeing2, boeing3, airbus1, airbus2, airbus3])
+    toubal.buy_aircraft(buyAircraft)
+    buyAircraft2 = random.choice([boeing1, boeing2, boeing3, airbus1, airbus2, airbus3])
+    oualladi.buy_aircraft(buyAircraft2)
+    # Simuler le processus de développement pour les avions en cours de développement
+    boeing = aircraft.Aircraft("Boeing", 0, 0, 0, 0, 0)
+    airbus = aircraft.Aircraft("Airbus", 0, 0, 0, 0, 0)
+    toubal.develop_aircraft(boeing)
+    oualladi.develop_aircraft(airbus)
+    # Demander aux joueurs de prendre des décisions stratégiques pour leur entreprise
+    # Vérifier si l'un des joueurs a perdu tous ses avions ou fait faillite
+    # Si le jeu est terminé, afficher le vainqueur et terminer la boucle de jeu
