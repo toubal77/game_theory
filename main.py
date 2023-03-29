@@ -38,13 +38,13 @@ if __name__ == '__main__':
         buyAircraft2 = random.choice([boeing1, boeing2, boeing3, airbus1, airbus2, airbus3])
         oualladi.sell_aircraft(buyAircraft2)
     # Simuler le processus de développement pour les avions en cours de développement
-    boeing = aircraft.Aircraft("Boeing", 0, 0, 0, 0, 0)
-    airbus = aircraft.Aircraft("Airbus", 0, 0, 0, 0, 0)
         # choice if company toubal want to develop or not
     if random.choice([1, 0]):
+        boeing = aircraft.Aircraft("Boeing", 0, 0, 0, 0, 0)
         toubal.develop_aircraft(boeing)
         # choice if company oualladi want to develop or not
     if random.choice([1, 0]):
+        airbus = aircraft.Aircraft("Airbus", 0, 0, 0, 0, 0)
         oualladi.develop_aircraft(airbus)
     # Demander aux joueurs de prendre des décisions stratégiques pour leur entreprise
     # Vérifier si l'un des joueurs a perdu tous ses avions ou fait faillite
