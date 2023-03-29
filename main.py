@@ -54,7 +54,8 @@ if __name__ == '__main__':
         if random.choice([1, 0]):
            print("-The company take decision of cooperation")
            cash_cooperation = toubal.cash + oualladi.cash
-           cooperation = cooperation.Cooperation(cash_cooperation);
+           cooperation = cooperation.Cooperation(cash_cooperation)
+           print(f"cash of players before cooperation toubal is {toubal.cash} and oualladi {oualladi.cash}")
            # choice type of plane airbus
            if random.choice([1, 0]):
                airbus = aircraft.Aircraft("Airbus", 0, 0, 0, 0, 0, True)
@@ -62,6 +63,7 @@ if __name__ == '__main__':
            else:
                boeing = aircraft.Aircraft("Boeing", 0, 0, 0, 0, 0, False)
                cooperation.develop_aircraft(boeing, toubal, oualladi)
+           print(f"cash of players after cooperation toubal is {toubal.cash} and oualladi {oualladi.cash}")
 
     # Vérifier si l'un des joueurs a perdu tous ses avions ou fait faillite
     # Si le jeu est terminé, afficher le vainqueur et terminer la boucle de jeu

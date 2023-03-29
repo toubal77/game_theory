@@ -1,5 +1,6 @@
 import random
 
+
 class Player:
     def __init__(self, name, company):
         self.name = name
@@ -8,6 +9,19 @@ class Player:
         self.airplane_boeing = 0
         self.airplane_airbus = 0
         self.aircrafts = []
+
+    def get_cash_after_cooperation(self, cash):
+        self.cash = cash
+
+    def get_cash_before_cooperation(self):
+        self.cash = 0
+
+    def get_aircraft_cooperation(self, aircraft):
+        self.aircrafts.append(aircraft)
+        if aircraft.isAirbus:
+            self.airplane_airbus += 1
+        else:
+            self.airplane_boeing += 1
 
     def buy_aircraft(self, aircraft):
         if self.cash >= aircraft.production_cost:

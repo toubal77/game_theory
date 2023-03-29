@@ -11,6 +11,8 @@ class Cooperation:
         print(f"-The balance of cooperation {self.cash}")
         cost = random.randint(100000, 1000000)
         if self.cash >= cost:
+            player1.get_cash_before_cooperation()
+            player2.get_cash_before_cooperation()
             self.cash -= cost
             self.cost = cost
             success_rate = random.randint(1, 10)
@@ -33,12 +35,14 @@ class Cooperation:
                         f" range {aircraft.range}, fuel consumption {aircraft.fuel_consumption}, "
                         f"speed {aircraft.speed},"
                         f" development cost {aircraft.development_cost}, production cost {aircraft.production_cost}.")
-                    player1.aircrafts.append(aircraft)
-                    player2.aircrafts.append(aircraft)
+                    player1.get_aircraft_cooperation(aircraft)
+                    player2.get_aircraft_cooperation(aircraft)
                 else:
                     print(
                         f"-The cooperation does not have the necessary funds to produce "
                         f"aircraft {self.cash}$, cost of produce is {cost_prod}$")
+            player1.get_cash_after_cooperation(self.cash // 2)
+            player2.get_cash_after_cooperation(self.cash // 2)
         else:
             print(
                 f"-The cooperation does not have the necessary funds to develop "
