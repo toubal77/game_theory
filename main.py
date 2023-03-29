@@ -1,5 +1,6 @@
 import aircraft
 import player
+import cooperation
 import random
 if __name__ == '__main__':
     #it is planes already produced and developed ready to be sold
@@ -40,12 +41,27 @@ if __name__ == '__main__':
     # Simuler le processus de développement pour les avions en cours de développement
         # choice if company toubal want to develop or not
     if random.choice([1, 0]):
-        boeing = aircraft.Aircraft("Boeing", 0, 0, 0, 0, 0)
+        boeing = aircraft.Aircraft("Boeing", 0, 0, 0, 0, 0, False)
         toubal.develop_aircraft(boeing)
         # choice if company oualladi want to develop or not
     if random.choice([1, 0]):
-        airbus = aircraft.Aircraft("Airbus", 0, 0, 0, 0, 0)
+        airbus = aircraft.Aircraft("Airbus", 0, 0, 0, 0, 0, True)
         oualladi.develop_aircraft(airbus)
     # Demander aux joueurs de prendre des décisions stratégiques pour leur entreprise
+        # choice if they take decision
+    if random.choice([1, 0]):
+        # choice if decision is cooperation
+        if random.choice([1, 0]):
+           print("-The company take decision of cooperation")
+           cash_cooperation = toubal.cash + oualladi.cash
+           cooperation = cooperation.Cooperation(cash_cooperation);
+           # choice type of plane airbus
+           if random.choice([1, 0]):
+               airbus = aircraft.Aircraft("Airbus", 0, 0, 0, 0, 0, True)
+               cooperation.develop_aircraft(airbus,toubal,oualladi)
+           else:
+               boeing = aircraft.Aircraft("Boeing", 0, 0, 0, 0, 0, False)
+               cooperation.develop_aircraft(boeing, toubal, oualladi)
+
     # Vérifier si l'un des joueurs a perdu tous ses avions ou fait faillite
     # Si le jeu est terminé, afficher le vainqueur et terminer la boucle de jeu
